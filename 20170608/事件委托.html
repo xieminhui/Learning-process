@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件委托</title>
+		<style>
+			li{
+				height: 25px;
+				text-align: center;
+				list-style: none;
+				border: 1px solid #eee;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="parent">
+			<li id="one">one</li>
+			<li id="two">two</li>
+			<li id="three">three</li>
+		</ul>
+	</body>
+	<script>
+		var parent = document.getElementById('parent');
+		parent.addEventListener('click', function(event){
+			var e = event || window.event;
+			switch(e.target.id){
+				case "one" : 
+					alert('one is clicked');
+					break;
+				case 'two' :
+					alert('two is clicked');
+					break;
+				case "three": 
+					alert('three is click');
+					break;
+				default:
+					alert('error!');
+			}
+		})
+	</script>
+</html>
